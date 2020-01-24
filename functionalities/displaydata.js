@@ -22,9 +22,9 @@ function showProduct(){
                     if(error || response.length==0)
                         return console.log('\nRecord cannot to fetched from the collection or collection is empty')
                                            
-                    console.log('\nProduct collection\n')
+                    console.log('\n->Product collection\n')
                     console.log('Name\t\t\t\tCategory')
-                    console.log('-----------------------------')
+                    console.log('-----------------------------------------------')
                     response.forEach((prod)=>{
                         console.log(prod.name+'\t\t\t\t'+prod.category)
                     })
@@ -53,7 +53,7 @@ function showCategory(){
                 if(error || response.length==0)
                     return console.log('\nRecord cannot to fetched from the collection or collection is empty')
                                        
-                console.log('\nCategory collection\n')
+                console.log('\n->Category collection\n')
                 console.log('Name')
                 console.log('-----------------------------')
                 response.forEach((prod)=>{

@@ -25,13 +25,13 @@ function getProdCount(name,category){
                 }
                 else
                 {
-                    console.log('Category \t\t Count of Products')
+                    //console.log('Category \t\t Count of Products')
                     response.forEach((category)=>{
                         db.collection('products').find({category:category.name}).toArray((error,res)=>{
                             if(error)
                                 return console.log('Data cannot be retrieved')
-                            console.log(res)
-                            console.log(category.name+'\t\t'+res.length)
+                            
+                            console.log('\n\n'+res.length+' products are present under category: '+category.name)
 
                         })
                     })

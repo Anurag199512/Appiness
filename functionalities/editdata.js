@@ -1,4 +1,5 @@
 const mongodb=require('mongodb')
+const display=require('./displaydata')
 const Mongoclient=mongodb.MongoClient
 
 const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
@@ -81,12 +82,16 @@ function deletecategory(cat_name){
             if(response.deletedCount==0)
                 console.log('No product available for the given category',cat_name)
             else
-            console.log('Product corresponding to category ',cat_name,'are removed.')
-
+            {
+                console.log('Product corresponding to category ',cat_name,'are removed.')
+                display.showCategory()
+                display.showProduct()
+            }
     })
         
       
     })
+
 
 }
 

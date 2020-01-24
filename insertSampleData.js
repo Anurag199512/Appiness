@@ -20,7 +20,7 @@ function insertData(){
             
             db.collection('products').insertOne({
                 'name':'Santoor',
-                'category':'soap'
+                'category':'Soap'
             },(error,response)=>{
                 
                 if(error|| response.ops.length==0)
@@ -47,7 +47,7 @@ function insertData(){
             db.collection('category').insertMany([
                 {'name':'Beauty'},
                 {'name':'Washing Powder'},
-                {'name':'Soaps'}
+                {'name':'Soap'}
             ])
             console.log('Sample data loaded for both product and category model......')
     })
