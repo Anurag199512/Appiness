@@ -4,10 +4,11 @@
 
 2. By default sample data is loaded in the database from the file (insertSampleData.js).
 
-    `Call this function only once incase reload is required after deleting the database comletely.`
+    `Call this function insertSampleData() only once incase reload is required after deleting the database comletely.`
 
 
-3. To delete all the data call function                     `deleteaAllProduct defined in editdata.js`
+3. To delete all the data call function                    
+     `deleteaAllProduct defined in editdata.js`
 
 
 4. For inserting a new value of product call function 
@@ -20,7 +21,7 @@
 
 6. Task 2 : If a category is removed then all its corresponding product should also be deleted
     
-    ```To verify this- 
+    ```To verify this 
     a)first call function deletecategory(CATEGORY_NAME)
     b) call showCategory() and showProduct()
     ```
@@ -32,7 +33,7 @@
 
 8. All of the function call mentioned above are already coded and commented as of now in app.js. 
 
-    `To verify just uncomment that function call and result will be printed.`
+    `To verify just uncomment that function call and run the code result will be printed.`
 
 
 
