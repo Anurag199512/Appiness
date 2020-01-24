@@ -5,6 +5,7 @@ const editdata=require('./functionalities/editdata')
 const getCount=require('./getproductcount')
 
 //1.    call this function to load sample data in product   and category model(collection)
+    //data is loaded by default, do not call this function unless you have called  editdata.deleteaAllProduct()
     //loaddata.insertData()
 
 
@@ -13,8 +14,8 @@ const getCount=require('./getproductcount')
 
 
 //3.    call these function to show all the data available in product  and category model(collection)
-    display.showProduct();
-    display.showCategory();
+    //display.showProduct();
+    //display.showCategory();
 
 
 

@@ -5,7 +5,13 @@ const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/te
 const databaseName='AppinessShop'
 
 
-function addProduct(name,category){
+function addProduct(name='',category=''){
+        if(name=='' && category=='')
+            return console.log('\nPlease give both productName and category in the function addProduct.')
+        else if(name=='')
+            return console.log('\nPlease give value for  productName in the function addProduct.')
+        else if(category=='')
+            return console.log('\nPlease give value for  category in the function addProduct.')
 
         Mongoclient.connect(connectionUrl,{useUnifiedTopology:true},(error,client)=>{
 

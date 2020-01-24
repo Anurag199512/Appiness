@@ -1,6 +1,10 @@
 1.  Starting file for the following code is app.js
     
-    `Either you can use nodemon app.js  or node app.js`
+    ```
+     First run npm install or yarn install to install all the dependencies
+     Either you can use nodemon app.js  or node app.js
+    
+    ```
 
 2. By default sample data is loaded in the database from the file (insertSampleData.js).
 
