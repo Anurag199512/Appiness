@@ -2,6 +2,7 @@ const mongodb=require('mongodb')
 const display=require('./displaydata')
 const Mongoclient=mongodb.MongoClient
 
+//connection parameter
 const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
 const databaseName='AppinessShop'
 
@@ -19,6 +20,7 @@ function deleteaAllProduct(){
         //connecting to the database to  fetch the product list
         let db=client.db(databaseName)    
 
+        //deleting everything from the product model
         db.collection('products').deleteMany({},(error,response)=>{
                 if(error)
                     return console.log('\nDeletion was not performed')
@@ -31,6 +33,7 @@ function deleteaAllProduct(){
  
         })
 
+        //deleting everything from category model
         db.collection('category').deleteMany({},(error,response)=>{
             if(error)
                 return console.log('\nDeletion was not performed')
@@ -61,6 +64,8 @@ function deletecategory(cat_name){
         //connecting to the database to  fetch the product list
         let db=client.db(databaseName)    
 
+
+        //deleting a specific category from the category model
         db.collection('category').deleteOne({name:cat_name},(error,response)=>{
                 if(error)
                     return console.log('\nDeletion was not performed')
@@ -74,6 +79,7 @@ function deletecategory(cat_name){
                     }        
         })
 
+        //deleting all the product which belong the deleted category
         db.collection('products').deleteMany({category:cat_name},(error,response)=>{
             if(error)
                 return console.log('\nDeletion was not performed')

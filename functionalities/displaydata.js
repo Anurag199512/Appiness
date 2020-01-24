@@ -1,6 +1,7 @@
 const mongodb=require('mongodb')
 const Mongoclient=mongodb.MongoClient
 
+//connection parameter
 const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
 const databaseName='AppinessShop'
 
@@ -18,6 +19,7 @@ function showProduct(){
             //connecting to the database to  fetch the product list
             let db=client.db(databaseName)    
 
+            //fethcing all the products
             db.collection('products').find({}).toArray((error,response)=>{
                     if(error || response.length==0)
                         return console.log('\nRecord cannot to fetched from the collection or collection is empty')
@@ -49,6 +51,7 @@ function showCategory(){
         //connecting to the database to  fetch the product list
         let db=client.db(databaseName)    
 
+        //fetching all the category names
         db.collection('category').find({}).toArray((error,response)=>{
                 if(error || response.length==0)
                     return console.log('\nRecord cannot to fetched from the collection or collection is empty')

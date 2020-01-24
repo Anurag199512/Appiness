@@ -1,10 +1,14 @@
 const mongodb=require('mongodb')
 const Mongoclient=mongodb.MongoClient
 
+const functions=require('./functionalities/addproduct')
+
+//connection parameter
 const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
 const databaseName='AppinessShop'
 
 
+//this will load the  databasewith a default set of data.CAll only once
 function insertData(){
 
         Mongoclient.connect(connectionUrl,{useUnifiedTopology:true},(error,client)=>{
@@ -36,19 +40,20 @@ function insertData(){
                 {'name':'Ariel','category':'Washing Powder'},
                 {'name':'Tide','category':'Washing Powder'},
                 {'name':'Rin','category':'Washing Powder'},
-                {'name':'Perfume','category':'Beauty'},
-                {'name':'Powder','category':'Beauty'},
-                {'name':'Creams','category':'Beauty'}
+                {'name':'Perfume','category':'Fashion'},
+                {'name':'Powder','category':'Fashion'},
+                {'name':'Creams','category':'Fashion'}
             ],(error,response)=>{
                 if(error|| response.ops.length==0)
                     return console.log('data was not loaded')
             })
 
             db.collection('category').insertMany([
-                {'name':'Beauty'},
+                {'name':'Fashion'},
                 {'name':'Washing Powder'},
                 {'name':'Soap'}
             ])
+            
             console.log('Sample data loaded for both product and category model......')
     })
 

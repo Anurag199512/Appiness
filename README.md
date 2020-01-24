@@ -39,5 +39,6 @@
 
     `To verify just uncomment that function call and run the code result will be printed.`
 
+9. Functions such as  ` insertSampleData(), deleteaAllProduct() should be ran in isolation`
 
 

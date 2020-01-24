@@ -4,6 +4,18 @@ const loaddata=require('./insertSampleData')
 const editdata=require('./functionalities/editdata')
 const getCount=require('./getproductcount')
 
+
+//By default task 3 result are displayed, point no 6 in app.js
+
+/*
+
+Run function belonging to only one point per run for each below point for best results.
+like of you are running insertdata() then please comment all the other function call.
+Thanks
+
+*/
+
+
 //1.    call this function to load sample data in product   and category model(collection)
     //data is loaded by default, do not call this function unless you have called  editdata.deleteaAllProduct()
     //loaddata.insertData()

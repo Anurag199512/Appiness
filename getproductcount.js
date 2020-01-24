@@ -1,10 +1,12 @@
 const mongodb=require('mongodb')
 const Mongoclient=mongodb.MongoClient
 
+//connection parameter
 const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
 const databaseName='AppinessShop'
 
 
+//displays the count of each product under each category
 function getProdCount(name,category){
 
         Mongoclient.connect(connectionUrl,{useUnifiedTopology:true},(error,client)=>{
