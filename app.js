@@ -1,8 +1,8 @@
-const functions=require('./functionalities/addproduct')
-const display=require('./functionalities/displaydata')
+const functions=require('./utils/addProduct')
+const display=require('./utils/displayData')
 const loaddata=require('./insertSampleData')
-const editdata=require('./functionalities/editdata')
-const getCount=require('./getproductcount')
+const editdata=require('./utils/editData')
+const getCount=require('./getProductCount')
 
 
 //By default task 3 result are displayed, point no 6 in app.js
@@ -23,12 +23,13 @@ Thanks
 
 
 //2.    call this function addProduct for inserting data into the product model(collection) by providing name,category
-    //functions.addProduct('laptop','Electronics')
+    //functions.addProduct('Television','Electronics')
 
 
 //3.    call these function to show all the data available in product  and category model(collection)
     //display.showProduct();
     //display.showCategory();
+    console.log('\n');
 
 
 

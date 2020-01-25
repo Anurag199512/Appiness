@@ -1,14 +1,12 @@
-const mongodb=require('mongodb')
-const Mongoclient=mongodb.MongoClient
-
-const functions=require('./functionalities/addproduct')
+const mongodb=require('mongodb');
+const Mongoclient=mongodb.MongoClient;
 
 //connection parameter
-const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority'
-const databaseName='AppinessShop'
+const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/test?retryWrites=true&w=majority';
+const databaseName='AppinessShop';
 
 
-//this will load the  databasewith a default set of data.CAll only once
+//this will load the  database with a default set of data.CAll only once
 function insertData(){
 
         Mongoclient.connect(connectionUrl,{useUnifiedTopology:true},(error,client)=>{
@@ -16,11 +14,11 @@ function insertData(){
             //if connection failes then return a error message
             if(error)
                 {
-                    return console.log("Cannot connect to the Mongo DB")
+                    return console.log("Cannot connect to the Mongo DB");
                 }
 
             //creating a database for our data
-            let db=client.db(databaseName)    
+            let db=client.db(databaseName);    
             
             db.collection('products').insertOne({
                 'name':'Santoor',
@@ -28,9 +26,9 @@ function insertData(){
             },(error,response)=>{
                 
                 if(error|| response.ops.length==0)
-                    return console.log('data was not loaded')
+                    return console.log('data was not loaded');
                  
-            })
+            });
 
             db.collection('products').insertMany([
                 {'name':'Lux','category':'Soap'},
@@ -45,16 +43,16 @@ function insertData(){
                 {'name':'Creams','category':'Fashion'}
             ],(error,response)=>{
                 if(error|| response.ops.length==0)
-                    return console.log('data was not loaded')
-            })
+                    return console.log('data was not loaded');
+            });
 
             db.collection('category').insertMany([
                 {'name':'Fashion'},
                 {'name':'Washing Powder'},
                 {'name':'Soap'}
-            ])
+            ]);
             
-            console.log('Sample data loaded for both product and category model......')
+            console.log('Sample data loaded for both product and category model......');
     })
 
 }
