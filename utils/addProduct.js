@@ -6,7 +6,7 @@ const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/te
 const databaseName='AppinessShop';
 
 //function to insert a product into the collection
-function addProduct(productName='',category=''){
+async function addProduct(productName='',category=''){
         if(productName=='' && category=='')
             return console.log('\nPlease give both productName and category in the function addProduct.');
         else if(productName=='')
@@ -39,12 +39,10 @@ function addProduct(productName='',category=''){
                 else
                 {
                     console.log('Product with these values already present');
+                    
                 }
             })
-
-         
-
-
+           
         db.collection('category').find({name:category}).toArray((error,response)=>{
             
             //checking if the category do not exist in the list then only insert it
@@ -52,12 +50,9 @@ function addProduct(productName='',category=''){
                 db.collection('category').insertOne({'name':category});
             }
         })
-
-
+         
     })
-
 }
-
 
 
 module.exports={

@@ -2,7 +2,7 @@ const functions=require('./utils/addProduct')
 const display=require('./utils/displayData')
 const loaddata=require('./insertSampleData')
 const editdata=require('./utils/editData')
-const getCount=require('./getProductCount')
+const getCount=require('./utils/getProductCount')
 
 
 //By default task 3 result are displayed, point no 6 in app.js
@@ -23,13 +23,13 @@ Thanks
 
 
 //2.    call this function addProduct for inserting data into the product model(collection) by providing name,category
-    //functions.addProduct('Television','Electronics')
+    //functions.addProduct('Televisssion1','Electronics')
 
 
 //3.    call these function to show all the data available in product  and category model(collection)
     //display.showProduct();
     //display.showCategory();
-    console.log('\n');
+    //console.log('\n');
 
 
 
@@ -39,7 +39,7 @@ Thanks
 
 //5.  TASK 2 SOLUTION  
     //call this function by providing a category to remove that category from database and the corresponding products
-//editdata.deletecategory('Beauty')
+//editdata.deletecategory('Fashion')
 
 
 //6.  TASK 3 SOLUTION  
