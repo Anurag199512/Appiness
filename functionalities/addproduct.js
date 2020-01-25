@@ -6,10 +6,10 @@ const connectionUrl='mongodb+srv://anurag:nature12@cluster0-qlkny.mongodb.net/te
 const databaseName='AppinessShop'
 
 //function to insert a product into the collection
-function addProduct(name='',category=''){
-        if(name=='' && category=='')
+function addProduct(productName='',category=''){
+        if(productName=='' && category=='')
             return console.log('\nPlease give both productName and category in the function addProduct.')
-        else if(name=='')
+        else if(productName=='')
             return console.log('\nPlease give value for  productName in the function addProduct.')
         else if(category=='')
             return console.log('\nPlease give value for  category in the function addProduct.')
@@ -25,15 +25,15 @@ function addProduct(name='',category=''){
             //creating a database for our data
             let db=client.db(databaseName)    
             
-            db.collection('products').find({name:name,category:category}).toArray((error,response)=>{
+            db.collection('products').find({name:productName,category:category}).toArray((error,response)=>{
                 
                 //checking if the product with the defined category is already present 
                 if(response.length==0){
                     db.collection('products').insertOne({
-                        'name':name,
+                        'name':productName,
                         'category':category
                     })
-                    console.log(`Product added with value name:${name} and category:${category}`)
+                    console.log(`Product added with value name:${productName} and category:${category}`)
                 }
                 else
                 {

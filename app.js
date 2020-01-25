@@ -10,7 +10,8 @@ const getCount=require('./getproductcount')
 /*
 
 Run function belonging to only one point per run for each below point for best results.
-like of you are running insertdata() then please comment all the other function call.
+Like if you are running insertdata() then please comment all the other function call from (1-6).
+
 Thanks
 
 */

@@ -1,7 +1,7 @@
 1.  Starting file for the following code is app.js
     
     ```
-     First run npm install or yarn install to install all the dependencies
+     First run npm install to install all the dependencies
      Either you can use nodemon app.js  or node app.js
     
     ```
